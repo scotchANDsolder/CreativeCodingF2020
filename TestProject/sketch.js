@@ -1,18 +1,15 @@
 
-let xpos = 0;
-
 function setup() {
-  // put setup code here
-createCanvas(400,400);
-background(200,10,120);
 
+  createCanvas(windowWidth,windowHeight);
 }
-
 function draw() {
-  //Put draw code here
-  fill(200,0,0);
 
-  circle(xpos,100,70);
+  background(200,10,120);
+  fill(0,255,0);
+  if( dist(mouseX,mouseY,width/2,height/2) < 100 ){
+    circle(width/2,height/2,100);
+  }
 
-  xpos = xpos + 1;
+
 }
