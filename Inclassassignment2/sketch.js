@@ -1,25 +1,34 @@
-let checker = 30;
-
 
 function setup() {
   // put setup code here
-  createCanvas(200,200);
-  background(200,10,120);
-
-
+  createCanvas(windowWidth,windowHeight);
+  background(255,179,168);
 }
 
 function draw() {
-  //Put draw code here
-  if(mouseIsPressed & checker > 50){
-    fill(255,0,0);
-    circle(100,50,20);
-  }
-  else {
-    fill(0,255,0);
-    rect(10,20,40);
-  }
+  // put drawing code here
+  for(let i=0;i<width;i=i+50){
+    for(let j=0;j<height;j=j+50){
 
+      let rcol=random(150,255);
+      let gcol=random(0,255);
+      let bcol=random(100,233);
+      fill(rcol,gcol,bcol);
+      noStroke();
+      rect(i,j,20);
 
+       }
+      }
+
+  for(let k=0;k<width;k=k+50){
+    for(let l=25;l<height;l=l+50){
+      let rcol=random(150,255);
+      let gcol=random(0,255);
+      let bcol=random(100,233);
+      fill(rcol,gcol,bcol);
+      noStroke();
+      circle(k,l,20);
+    }
+  }
 
 }

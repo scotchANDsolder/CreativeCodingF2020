@@ -1,20 +1,18 @@
 
 function setup() {
-  // put setup code here
   createCanvas(windowWidth,windowHeight);
-  background(200,10,120);
-
-  for(let i = 0;i<width;i=i+1){
-    strokeWeight(random(10))
-    stroke(random(0,255),random(0,255),random(0,255));
-    line(0,i,random(0,width/2),i);
+  background(0,0,225);
+  let xpos = 0;
+  for(let i = height ; i > 0 ; i = i - 5){
+    xpos = xpos + 5;
+    line(0,i,xpos,0)
   }
+
 
 }
 
-function draw() {
-  //Put draw code here
 
+function draw() {
 
 
 
