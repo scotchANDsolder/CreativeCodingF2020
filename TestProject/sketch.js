@@ -1,34 +1,49 @@
-let monaLisa;
-let x = 0;
-let y = 0;
-let face;
+let x1;
+let y1;
+let x2;
+let y2;
+let x3;
+let y3;
+let x4;
+let y4;
 
-function preload() {
-  monaLisa = loadImage("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/France-003324_-_Mona_Lisa_%2816236519171%29.jpg/400px-France-003324_-_Mona_Lisa_%2816236519171%29.jpg");
+let offset;
+
+
+function setup(){
+  createCanvas(windowWidth,windowHeight);
+    background(200,0,0);
+    strokeWeight(2);
+    stroke(0,5);
+    offset = 0.0;
+    noFill();
 
 }
 
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  face = monaLisa.get(140,50,120,150);
 
-}
+function draw(){
+  // x1 = random(0,width);
+  // y1 = random(0,height);
+  // x2 = random(0,width);
+  // y2 = random(0,height);
+  // x3 = random(0,width);
+  // y3 = random(0,height);
+  // x4 = random(0,width);
+  // y4 = random(0,height);
 
-function draw() {
-  background(0,120,120);
-  angleMode(DEGREES);
-  imageMode(CENTER);
+  x1 = noise(offset)*width;
+  x2 = noise(offset + 10)*width;
+  x3 = noise(offset + 20)*width;
+  x4 = noise(offset + 30)*width;
 
-  push();
-  translate(400,400);
-  circle(0,0,20);
-  for(let i = 0; i < 100; i = i +1){
-    image(face,0,200);
-    rotate(x);
-  }
+  y1 = noise(offset + 50)*height;
+  y2 = noise(offset + 60)*height;
+  y3 = noise(offset + 70)*height;
+  y4 = noise(offset + 80)*height;
 
-  x = x +1;
-  pop();
+  bezier(x1,y1,x2,y2,x3,y3,x4,y4);
+
+  offset = offset +0.001;
 
 
 
